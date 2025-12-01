@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas - Clash Royale</title>
+    <meta name="description" content="Explore todas as cartas disponíveis em Clash Royale. Descubra tropas, feitiços e construções de todas as raridades.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: var(--gradient-dark);
+        }
+        .page-title {
+            font-size: 4rem;
+            background: var(--gradient-royal);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .filter-section {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--foreground);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        .card-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .card-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .card-name {
+            font-size: 1.5rem;
+        }
+        .card-elixir {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+        }
+        .card-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--muted);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-rarity {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .rarity-comum { color: hsl(0, 0%, 70%); }
+        .rarity-rara { color: hsl(200, 80%, 60%); }
+        .rarity-epica { color: hsl(280, 80%, 65%); }
+        .rarity-lendaria { color: hsl(43, 96%, 56%); }
+        .rarity-campea { color: hsl(350, 80%, 60%); }
+        .card-description {
+            color: var(--muted-foreground);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .card-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">👑</span>
+                <span>CLASH ROYALE</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="cartas.html" class="nav-link active">Cartas</a>
+                <a href="sobre.html" class="nav-link">Sobre o Jogo</a>
+                <a href="atualizacoes.html" class="nav-link">Atualizações</a>
+                <a href="trailer.html" class="nav-link">Trailer</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+        <div class="mobile-menu">
+            <a href="../index.html" class="mobile-link">Início</a>
+            <a href="cartas.html" class="mobile-link active">Cartas</a>
+            <a href="sobre.html" class="mobile-link">Sobre o Jogo</a>
+            <a href="atualizacoes.html" class="mobile-link">Atualizações</a>
+            <a href="trailer.html" class="mobile-link">Trailer</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">CARTAS</h1>
+            <p style="color: var(--muted-foreground); font-size: 1.125rem;">
+                Explore todas as cartas e monte o deck perfeito
+            </p>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterCards('Todas')">Todas</button>
+                <button class="filter-btn" onclick="filterCards('Tropa')">🦸 Tropas</button>
+                <button class="filter-btn" onclick="filterCards('Feitiço')">✨ Feitiços</button>
+                <button class="filter-btn" onclick="filterCards('Construção')">🏗️ Construções</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="cards-grid">
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">🛡️</div>
+                <div class="card-header">
+                    <h3 class="card-name">Cavaleiro</h3>
+                    <span class="card-elixir">3</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-comum">● Comum</div>
+                <p class="card-description">Um cavaleiro durão, ele dá e recebe dano como um campeão!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">🏹</div>
+                <div class="card-header">
+                    <h3 class="card-name">Arqueiras</h3>
+                    <span class="card-elixir">3</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-comum">● Comum</div>
+                <p class="card-description">Um par de atiradoras mortais. Elas disparam de longe!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">🦾</div>
+                <div class="card-header">
+                    <h3 class="card-name">Gigante</h3>
+                    <span class="card-elixir">5</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-rara">● Rara</div>
+                <p class="card-description">Gigante lento mas durão, ignora tropas e foca em construções.</p>
+            </div>
+
+            <div class="card-item" data-type="Feitiço">
+                <div class="card-emoji">🔥</div>
+                <div class="card-header">
+                    <h3 class="card-name">Bola de Fogo</h3>
+                    <span class="card-elixir">4</span>
+                </div>
+                <div class="card-type">✨ Feitiço</div>
+                <div class="card-rarity rarity-rara">● Rara</div>
+                <p class="card-description">Lança uma bola de fogo explosiva que causa alto dano em área.</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">🐗</div>
+                <div class="card-header">
+                    <h3 class="card-name">Montador de Porcos</h3>
+                    <span class="card-elixir">4</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-rara">● Rara</div>
+                <p class="card-description">Cavalga um porco veloz direto às construções inimigas!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">🤖</div>
+                <div class="card-header">
+                    <h3 class="card-name">P.E.K.K.A</h3>
+                    <span class="card-elixir">7</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-epica">● Épica</div>
+                <p class="card-description">Uma armadura blindada de destruição. Não pergunte o que P.E.K.K.A significa!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">⚔️</div>
+                <div class="card-header">
+                    <h3 class="card-name">Megacavaleiro</h3>
+                    <span class="card-elixir">7</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-lendaria">● Lendária</div>
+                <p class="card-description">Ele salta nas tropas, esmagando tudo no caminho. O impacto é devastador!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">⚡</div>
+                <div class="card-header">
+                    <h3 class="card-name">Mago Elétrico</h3>
+                    <span class="card-elixir">4</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-lendaria">● Lendária</div>
+                <p class="card-description">Ataca duas unidades ao mesmo tempo e atordoa com sua entrada!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">👸</div>
+                <div class="card-header">
+                    <h3 class="card-name">Princesa</h3>
+                    <span class="card-elixir">3</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-lendaria">● Lendária</div>
+                <p class="card-description">Ela atira MUITO longe e causa dano em área. Uma verdadeira atiradeira de elite!</p>
+            </div>
+
+            <div class="card-item" data-type="Feitiço">
+                <div class="card-emoji">🪣</div>
+                <div class="card-header">
+                    <h3 class="card-name">Barril de Goblins</h3>
+                    <span class="card-elixir">3</span>
+                </div>
+                <div class="card-type">✨ Feitiço</div>
+                <div class="card-rarity rarity-epica">● Épica</div>
+                <p class="card-description">Lança três goblins em qualquer lugar da arena. Uma diversão destrutiva!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">💀</div>
+                <div class="card-header">
+                    <h3 class="card-name">Exército de Esqueletos</h3>
+                    <span class="card-elixir">3</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-epica">● Épica</div>
+                <p class="card-description">Um batalhão de 15 esqueletos. São tão frágeis que morrem rápido!</p>
+            </div>
+
+            <div class="card-item" data-type="Construção">
+                <div class="card-emoji">🔥</div>
+                <div class="card-header">
+                    <h3 class="card-name">Torre Infernal</h3>
+                    <span class="card-elixir">5</span>
+                </div>
+                <div class="card-type">🏗️ Construção</div>
+                <div class="card-rarity rarity-rara">● Rara</div>
+                <p class="card-description">Torre defensiva que causa dano crescente. Derrete tanques!</p>
+            </div>
+
+            <div class="card-item" data-type="Feitiço">
+                <div class="card-emoji">⚡</div>
+                <div class="card-header">
+                    <h3 class="card-name">Zap</h3>
+                    <span class="card-elixir">2</span>
+                </div>
+                <div class="card-type">✨ Feitiço</div>
+                <div class="card-rarity rarity-comum">● Comum</div>
+                <p class="card-description">Zap rápido que atordoa e causa dano em área.</p>
+            </div>
+
+            <div class="card-item" data-type="Feitiço">
+                <div class="card-emoji">🪵</div>
+                <div class="card-header">
+                    <h3 class="card-name">Tronco</h3>
+                    <span class="card-elixir">2</span>
+                </div>
+                <div class="card-type">✨ Feitiço</div>
+                <div class="card-rarity rarity-lendaria">● Lendária</div>
+                <p class="card-description">Rola um grande tronco pelo campo, empurrando e causando dano!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">🐲</div>
+                <div class="card-header">
+                    <h3 class="card-name">Dragão Bebê</h3>
+                    <span class="card-elixir">4</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-epica">● Épica</div>
+                <p class="card-description">Dragão voador que cospe fogo em área. Ótimo para defesa!</p>
+            </div>
+
+            <div class="card-item" data-type="Tropa">
+                <div class="card-emoji">🧙‍♀️</div>
+                <div class="card-header">
+                    <h3 class="card-name">Bruxa</h3>
+                    <span class="card-elixir">5</span>
+                </div>
+                <div class="card-type">🦸 Tropa</div>
+                <div class="card-rarity rarity-epica">● Épica</div>
+                <p class="card-description">Invoca esqueletos, causa splash e ataca à distância!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Clash Royale Fan Site. Todos os direitos reservados.</p>
+            <p class="footer-disclaimer">Este é um site não oficial de fãs. Clash Royale é marca registrada da Supercell.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

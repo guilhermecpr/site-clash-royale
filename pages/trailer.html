@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailer - Clash Royale</title>
+    <meta name="description" content="Assista ao trailer oficial de Clash Royale e veja o jogo em ação.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: var(--gradient-dark);
+        }
+        .page-title {
+            font-size: 4rem;
+            background: var(--gradient-royal);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .video-section {
+            padding: 4rem 0;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .gallery-section {
+            padding: 4rem 0;
+            background: var(--card);
+        }
+        .gallery-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .screenshot-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary);
+        }
+        .screenshot-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .screenshot-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(13, 17, 23, 0.95), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(70%);
+            transition: transform 0.3s;
+        }
+        .screenshot-card:hover .screenshot-overlay {
+            transform: translateY(0);
+        }
+        .screenshot-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary);
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .screenshot-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .screenshot-description {
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        .icon-badge {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">👑</span>
+                <span>CLASH ROYALE</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="cartas.html" class="nav-link">Cartas</a>
+                <a href="sobre.html" class="nav-link">Sobre o Jogo</a>
+                <a href="atualizacoes.html" class="nav-link">Atualizações</a>
+                <a href="trailer.html" class="nav-link active">Trailer</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+        <div class="mobile-menu">
+            <a href="../index.html" class="mobile-link">Início</a>
+            <a href="cartas.html" class="mobile-link">Cartas</a>
+            <a href="sobre.html" class="mobile-link">Sobre o Jogo</a>
+            <a href="atualizacoes.html" class="mobile-link">Atualizações</a>
+            <a href="trailer.html" class="mobile-link active">Trailer</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">TRAILER</h1>
+            <p style="color: var(--muted-foreground); font-size: 1.125rem;">
+                Assista ao trailer oficial e veja o jogo em ação
+            </p>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/1RC1yxqTTd8" 
+                    title="Clash Royale Trailer" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-section">
+        <div class="container">
+            <h2 class="gallery-title">Galeria de Screenshots</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="../img/screenshot-1.png" alt="Batalha Épica" class="screenshot-image">
+                    <div class="screenshot-overlay">
+                        <div class="icon-badge">⚔️</div>
+                        <span class="screenshot-category">Batalha</span>
+                        <h3 class="screenshot-title">Batalha Épica</h3>
+                        <p class="screenshot-description">Confronto intenso entre dois jogadores com tropas lendárias em campo</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="../img/screenshot-2.jpg" alt="Cartas Lendárias" class="screenshot-image">
+                    <div class="screenshot-overlay">
+                        <div class="icon-badge">👑</div>
+                        <span class="screenshot-category">Cartas</span>
+                        <h3 class="screenshot-title">Cartas Lendárias</h3>
+                        <p class="screenshot-description">Coleção de cartas raras e lendárias com habilidades únicas</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="../img/screenshot-ataque.png" alt="Ataque Coordenado" class="screenshot-image">
+                    <div class="screenshot-overlay">
+                        <div class="icon-badge">⚡</div>
+                        <span class="screenshot-category">Estratégia</span>
+                        <h3 class="screenshot-title">Ataque Coordenado</h3>
+                        <p class="screenshot-description">Combinação perfeita de tropas executando um push devastador</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="../img/screenshot-2v2.jpg" alt="Batalha 2v2" class="screenshot-image">
+                    <div class="screenshot-overlay">
+                        <div class="icon-badge">👥</div>
+                        <span class="screenshot-category">Cooperativo</span>
+                        <h3 class="screenshot-title">Batalha 2v2</h3>
+                        <p class="screenshot-description">Trabalho em equipe em ação no modo cooperativo 2v2</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="../img/battle-scene.png" alt="Cena de Batalha" class="screenshot-image">
+                    <div class="screenshot-overlay">
+                        <div class="icon-badge">🎮</div>
+                        <span class="screenshot-category">Gameplay</span>
+                        <h3 class="screenshot-title">Cena de Batalha</h3>
+                        <p class="screenshot-description">Momento decisivo com múltiplas tropas em campo de batalha</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="../img/skeletons-battle.png" alt="Exército de Esqueletos" class="screenshot-image">
+                    <div class="screenshot-overlay">
+                        <div class="icon-badge">💀</div>
+                        <span class="screenshot-category">Tropas</span>
+                        <h3 class="screenshot-title">Exército de Esqueletos</h3>
+                        <p class="screenshot-description">Enxame de esqueletos em ação contra torres inimigas</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="../img/robot-battle.png" alt="Robôs em Combate" class="screenshot-image">
+                    <div class="screenshot-overlay">
+                        <div class="icon-badge">🤖</div>
+                        <span class="screenshot-category">Épico</span>
+                        <h3 class="screenshot-title">Robôs em Combate</h3>
+                        <p class="screenshot-description">P.E.K.K.A e outros robôs pesados dominando o campo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Clash Royale Fan Site. Todos os direitos reservados.</p>
+            <p class="footer-disclaimer">Este é um site não oficial de fãs. Clash Royale é marca registrada da Supercell.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Jogo - Clash Royale</title>
+    <meta name="description" content="Saiba mais sobre Clash Royale, suas mecânicas, modos de jogo e características principais.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: var(--gradient-dark);
+        }
+        .page-title {
+            font-size: 4rem;
+            background: var(--gradient-royal);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .content-section {
+            padding: 4rem 0;
+        }
+        .content-section:nth-child(even) {
+            background: var(--card);
+        }
+        .section-subtitle {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .info-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .content-section:nth-child(even) .info-card {
+            background: var(--background);
+        }
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .info-card p {
+            color: var(--muted-foreground);
+            line-height: 1.8;
+        }
+        .game-modes {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .mode-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+        }
+        .mode-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .mode-card p {
+            color: var(--muted-foreground);
+        }
+        .glossary {
+            display: grid;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 2rem auto 0;
+        }
+        .glossary-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .glossary-term {
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .glossary-definition {
+            color: var(--muted-foreground);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">👑</span>
+                <span>CLASH ROYALE</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="cartas.html" class="nav-link">Cartas</a>
+                <a href="sobre.html" class="nav-link active">Sobre o Jogo</a>
+                <a href="atualizacoes.html" class="nav-link">Atualizações</a>
+                <a href="trailer.html" class="nav-link">Trailer</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+        <div class="mobile-menu">
+            <a href="../index.html" class="mobile-link">Início</a>
+            <a href="cartas.html" class="mobile-link">Cartas</a>
+            <a href="sobre.html" class="mobile-link active">Sobre o Jogo</a>
+            <a href="atualizacoes.html" class="mobile-link">Atualizações</a>
+            <a href="trailer.html" class="mobile-link">Trailer</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">SOBRE O JOGO</h1>
+            <p style="color: var(--muted-foreground); font-size: 1.125rem;">
+                Descubra as mecânicas e características de Clash Royale
+            </p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <h2 class="section-subtitle">Como Jogar</h2>
+            <p style="text-align: center; color: var(--muted-foreground); max-width: 800px; margin: 0 auto 2rem;">
+                Clash Royale é um jogo de estratégia em tempo real onde você coleta e evolui cartas 
+                apresentando as tropas, feitiços e defesas do Clash. Batalhe em arenas épicas e 
+                destrua as torres dos seus inimigos!
+            </p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎮 Mecânica Básica</h3>
+                    <p>Monte um deck de 8 cartas e entre em batalhas 1v1. Derrote o oponente destruindo mais torres em 3 minutos de combate estratégico.</p>
+                </div>
+                <div class="info-card">
+                    <h3>💎 Sistema de Elixir</h3>
+                    <p>Gerencie seu elixir com sabedoria. Cada carta custa elixir para ser jogada. Use-o estrategicamente para superar seu adversário!</p>
+                </div>
+                <div class="info-card">
+                    <h3>🏰 Torres e Objetivos</h3>
+                    <p>Destrua as torres do oponente para vencer. Cada torre destruída vale 1 coroa. Quem tiver mais coroas ao final vence!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <h2 class="section-subtitle">Características Principais</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>⚔️ Combate em Tempo Real</h3>
+                    <p>Batalhas dinâmicas de 3 minutos contra jogadores reais. Cada segundo conta!</p>
+                </div>
+                <div class="info-card">
+                    <h3>🃏 Coleção de Cartas</h3>
+                    <p>Desbloqueie e evolua dezenas de cartas únicas com diferentes raridades e habilidades.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🏆 Sistema de Arenas</h3>
+                    <p>Suba de arena conforme ganha troféus. Cada arena desbloqueia novas cartas!</p>
+                </div>
+                <div class="info-card">
+                    <h3>👥 Clãs</h3>
+                    <p>Una-se a um clã, doe cartas, participe de guerras e conquiste recompensas coletivas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎯 Desafios</h3>
+                    <p>Participe de desafios especiais e torneios para ganhar recompensas exclusivas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📈 Progressão</h3>
+                    <p>Evolua suas cartas, suba de nível e desbloqueie novas habilidades poderosas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <h2 class="section-subtitle">Modos de Jogo</h2>
+            <div class="game-modes">
+                <div class="mode-card">
+                    <h3>⚔️ Batalha 1v1</h3>
+                    <p>O modo clássico. Enfrente um oponente em batalhas ranqueadas para ganhar troféus e subir de arena.</p>
+                </div>
+                <div class="mode-card">
+                    <h3>👥 Batalha 2v2</h3>
+                    <p>Forme dupla com um amigo ou jogador aleatório para enfrentar outra dupla em batalhas cooperativas.</p>
+                </div>
+                <div class="mode-card">
+                    <h3>🎯 Desafios</h3>
+                    <p>Participe de desafios com regras especiais. Vença 12 vezes para conquistar recompensas épicas!</p>
+                </div>
+                <div class="mode-card">
+                    <h3>🏆 Torneios</h3>
+                    <p>Crie ou participe de torneios customizados com regras especiais e competição acirrada.</p>
+                </div>
+                <div class="mode-card">
+                    <h3>⚡ Guerra de Clãs</h3>
+                    <p>Colabore com seu clã para vencer outros clãs em guerras semanais e ganhar recompensas exclusivas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <h2 class="section-subtitle">Glossário de Termos</h2>
+            <div class="glossary">
+                <div class="glossary-item">
+                    <div class="glossary-term">Elixir</div>
+                    <div class="glossary-definition">Recurso usado para jogar cartas. Se regenera automaticamente durante a batalha.</div>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term">Deck</div>
+                    <div class="glossary-definition">Conjunto de 8 cartas que você escolhe para usar em batalha.</div>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term">Arena</div>
+                    <div class="glossary-definition">Nível de progressão baseado em troféus. Arenas superiores desbloqueiam novas cartas.</div>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term">Troféus</div>
+                    <div class="glossary-definition">Pontos ganhos ao vencer batalhas. Definem sua arena e ranking global.</div>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term">Clã</div>
+                    <div class="glossary-definition">Grupo de jogadores que se unem para doar cartas, batalhar juntos e participar de guerras.</div>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term">Evolução</div>
+                    <div class="glossary-definition">Versões melhoradas de cartas que ganham habilidades e visuais especiais.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Clash Royale Fan Site. Todos os direitos reservados.</p>
+            <p class="footer-disclaimer">Este é um site não oficial de fãs. Clash Royale é marca registrada da Supercell.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
